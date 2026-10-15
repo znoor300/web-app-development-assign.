@@ -9,3 +9,179 @@
        
     </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #1f2937;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 560px;
+      padding: 45px 32px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: #e0e7ff;
+      color: #4338ca;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      color: #6b7280;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .contact-section {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .contact-link {
+      display: block;
+      text-decoration: none;
+      color: #4338ca;
+      background: #f8faff;
+      border: 1px solid #e5e7eb;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 10px;
+      overflow-wrap: anywhere;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-link:hover {
+      background: #eef2ff;
+      transform: translateY(-2px);
+    }
+
+    .contact-link:focus-visible {
+      outline: 3px solid #818cf8;
+      outline-offset: 3px;
+    }
+
+    .link-label {
+      display: block;
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      color: #9ca3af;
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 480px) {
+      .contact-card {
+        padding: 32px 20px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="contact-card">
+    <div class="profile-icon" aria-hidden="true">Y</div>
+
+    <h1>Let's Connect</h1>
+
+    <p class="intro">
+      I'd love to connect with professionals, collaborate on projects,
+      and explore new opportunities. Feel free to reach out!
+    </p>
+
+    <section class="contact-section" aria-labelledby="email-heading">
+      <h2 id="email-heading">Email Me</h2>
+
+      <a class="contact-link"
+         href="mailto:hello@example.com">
+        <span class="link-label">Professional email</span>
+        hello@example.com
+      </a>
+    </section>
+
+    <section class="contact-section" aria-labelledby="profiles-heading">
+      <h2 id="profiles-heading">Professional Profiles</h2>
+
+      <a class="contact-link"
+         href="https://www.linkedin.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="link-label">LinkedIn</span>
+        View my LinkedIn profile ↗
+      </a>
+
+      <a class="contact-link"
+         href="https://github.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="link-label">GitHub</span>
+        Explore my projects on GitHub ↗
+      </a>
+
+      <a class="contact-link"
+         href="https://x.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="link-label">X (formerly Twitter)</span>
+        Follow my professional updates ↗
+      </a>
+    </section>
+
+    <footer>
+      © 2026 Your Name. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
