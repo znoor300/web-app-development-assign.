@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +9,59 @@
     <title>Contact Me | My Portfolio</title>
 
     <style>
+
+        /* GENERAL STYLING */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --background: #FAFAFC;
+            --light-purple: #F2EDF8;
+            --purple: #7652A3;
+            --neon-green: #B8FF3B;
+            --dark-grey: #37343E;
+            --medium-grey: #77727F;
+            --light-grey: #E9E8ED;
         }
 
         body {
-            background: #f4f7fc;
-            color: #333;
-            line-height: 1.7;
+            background: var(--white);
+            color: var(--dark-grey);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Navigation */
+        /* NAVIGATION BAR */
+
         header {
-            background: #101c36;
-            padding: 18px 8%;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
         }
 
         .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            color: #00c9a7;
             font-size: 25px;
+            font-weight: bold;
+            color: var(--purple);
+        }
+
+        .logo span {
+            color: #82BD20;
         }
 
         .nav-links {
@@ -46,155 +71,142 @@
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
+            color: var(--dark-grey);
+            font-size: 14px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #00c9a7;
+            color: var(--purple);
+            border-bottom: 2px solid var(--neon-green);
+            padding-bottom: 5px;
         }
 
-        /* Contact Hero */
-        .contact-hero {
-            background: linear-gradient(135deg, #101c36, #243b65);
-            color: white;
-            text-align: center;
-            padding: 65px 10%;
-        }
+        /* MAIN CONTACT AREA */
 
-        .contact-hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .contact-hero span {
-            color: #00c9a7;
-        }
-
-        /* Main Contact Section */
         .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 30px;
-            padding: 60px 10%;
-            flex-wrap: wrap;
+            width: 90%;
+            max-width: 750px;
+            margin: auto;
+            padding: 55px 0;
         }
 
-        .contact-info,
-        .contact-form {
-            background: white;
-            padding: 30px;
+        /* PAGE TITLE */
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .contact-title h1 {
+            font-size: 38px;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .contact-title span {
+            color: #82BD20;
+        }
+
+        .contact-title p {
+            color: var(--medium-grey);
+            font-size: 15px;
+        }
+
+        /* CONTACT INFORMATION BOX */
+
+        .contact-box {
+            background: var(--background);
+            border: 1px solid var(--light-grey);
+            border-top: 4px solid var(--neon-green);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            flex: 1;
-            min-width: 280px;
-            max-width: 500px;
+            padding: 35px 40px;
+            box-shadow: 0 5px 20px rgba(118,82,163,0.08);
         }
 
-        .contact-info h2,
-        .contact-form h2 {
-            color: #101c36;
-            margin-bottom: 20px;
+        /* INDIVIDUAL CONTACT SECTIONS */
+
+        .contact-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-grey);
         }
 
-        .contact-info p {
-            margin-bottom: 15px;
+        .contact-item:last-child {
+            border-bottom: none;
         }
 
-        .contact-info a {
-            color: #008f79;
+        .contact-item h2 {
+            font-size: 19px;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            color: var(--medium-grey);
+        }
+
+        .contact-item a {
+            color: var(--dark-grey);
             text-decoration: none;
-            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .contact-info a:hover {
+        .contact-item a:hover {
+            color: var(--purple);
             text-decoration: underline;
         }
 
+        /* SOCIAL MEDIA LINKS */
+
         .social-links {
-            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .social-links a {
-            display: block;
-            margin: 12px 0;
-            padding: 10px 15px;
-            background: #e8eef8;
-            border-radius: 8px;
+            padding: 8px 17px;
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-radius: 20px;
+            color: var(--purple);
+            font-size: 14px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
         .social-links a:hover {
-            background: #00c9a7;
-            color: #101c36;
+            background: var(--neon-green);
+            color: var(--dark-grey);
             text-decoration: none;
         }
 
-        /* Contact Form */
-        .contact-form label {
-            display: block;
-            margin: 12px 0 5px;
-            font-weight: bold;
-        }
+        /* FOOTER */
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #00c9a7;
-        }
-
-        .contact-form textarea {
-            height: 130px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            width: 100%;
-            margin-top: 20px;
-            padding: 13px;
-            border: none;
-            background: #00c9a7;
-            color: #101c36;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: #101c36;
-            color: white;
-        }
-
-        #message-status {
-            margin-top: 15px;
-            color: #008f79;
-            font-weight: bold;
-        }
-
-        /* Footer */
         footer {
-            background: #101c36;
-            color: white;
+            margin-top: auto;
+            padding: 22px;
             text-align: center;
-            padding: 25px;
+            background: var(--light-purple);
+            border-top: 1px solid var(--light-grey);
+            color: var(--medium-grey);
+            font-size: 13px;
         }
 
-        /* Mobile Responsive */
+        footer span {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        /* MOBILE RESPONSIVE */
+
         @media (max-width: 768px) {
+
             .navbar {
                 flex-direction: column;
                 gap: 15px;
@@ -206,190 +218,214 @@
                 gap: 12px;
             }
 
-            .contact-hero h1 {
+            .contact-title h1 {
                 font-size: 30px;
             }
 
-            .contact-container {
-                padding: 35px 5%;
+            .contact-box {
+                padding: 25px 20px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- NAVIGATION BAR -->
+
     <header>
+
         <nav class="navbar">
 
-            <h2 class="logo">MyPortfolio.</h2>
+            <div class="logo">
+                MyPortfolio<span>.</span>
+            </div>
 
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Me</a></li>
-                <li><a href="index.html#career">Career</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">Contact</a>
+                </li>
+
+                <li>
+                    <a href="skills.html">Skills</a>
+                </li>
+
+                <li>
+                    <a href="business.html">Business Showcase</a>
+                </li>
+
+                <li>
+                    <a href="problem-solving.html">Problem Solving</a>
+                </li>
+
             </ul>
 
         </nav>
+
     </header>
 
-    <!-- Contact Introduction -->
-    <section class="contact-hero">
 
-        <h1>Contact <span>Me</span></h1>
+    <!-- CONTACT PAGE -->
 
-        <p>
-            
-        </p>
+    <main class="contact-container">
 
-    </section>
+        <!-- PAGE TITLE -->
 
-    <!-- Contact Details and Form -->
-    <section class="contact-container">
+        <div class="contact-title">
 
-        <!-- Contact Information -->
-        <div class="contact-info">
-
-            <h2>Get In Touch</h2>
+            <h1>Contact <span>Me</span></h1>
 
             <p>
-                Feel free to contact me through email
-                or connect with me using my professional
-                social media profiles.
+                Feel free to get in touch with me
+                through any of the details below.
             </p>
 
-            <p>
-                <strong>Email:</strong><br>
-                <a href="mailto:yourname@example.com">
-                    zahra.noor2710@gmail.com
-                </a>
-            </p>
+        </div>
 
-            <div class="social-links">
 
-                <h2>Professional Profiles</h2>
+        <!-- CONTACT INFORMATION BOX -->
 
-                <a href="www.linkedin.com/in/zahra-noor-bb746233a"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    LinkedIn – Professional Profile
-                </a>
+        <div class="contact-box">
 
-                <a href="https://github.com/yourname"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    GitHub – Projects and Work
-                </a>
 
-                <a href="https://yourname.example.com"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Personal Website – Portfolio
-                </a>
+            <!-- 1. EMAIL -->
+
+            <div class="contact-item">
+
+                <h2>Email</h2>
+
+                <p>
+                    <a href="mailto:yourname@example.com">
+                        z.noor3@edu.salford.ac.uk
+                    </a>
+                </p>
 
             </div>
 
+
+            <!-- 2. PHONE -->
+
+            <div class="contact-item">
+
+                <h2>Phone</h2>
+
+                <p>
+                    <a href="tel:+441234567890">
+                        +44 7341 880240
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- 3. SOCIAL MEDIA -->
+
+            <div class="contact-item">
+
+                <h2>Social Media</h2>
+
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/zahra-noor-bb746233a/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        LinkedIn
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1Bit66jgYz/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Facebook
+                    </a>
+
+                    <a href="https://github.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4. ADDRESS -->
+
+            <div class="contact-item">
+
+                <h2>Address</h2>
+
+                <p>
+                    Salford, Greater Manchester, United Kingdom 
+                
+                </p>
+
+            </div>
+
+
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form">
+    </main>
 
-            <h2>Send Me a Message</h2>
 
-            <form id="contactForm">
+    <!-- FOOTER -->
 
-                <label for="name">Your Name</label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
-
-                <label for="email">Your Email</label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-                <label for="message">Your Message</label>
-
-                <textarea
-                    id="message"
-                    placeholder="Write your message here..."
-                    required
-                ></textarea>
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-                <p id="message-status" aria-live="polite"></p>
-
-            </form>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
     <footer>
 
-        <p>&copy; 2026 Your Name | Personal Portfolio</p>
+        <p>
+            &copy; <span id="year"></span>
+            Your Name. All Rights Reserved.
+        </p>
 
-        <p>Designed with HTML, CSS and JavaScript</p>
+        <p>
+            Personal Portfolio
+        </p>
 
     </footer>
 
-    <!-- JavaScript -->
+
+    <!-- JAVASCRIPT -->
+
     <script>
 
-        const contactForm = document.getElementById("contactForm");
+        // Automatically update copyright year
 
-        contactForm.addEventListener("submit", function(event) {
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
-            event.preventDefault();
+        // Navigation active link
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+        const navLinks = document.querySelectorAll(".nav-links a");
 
-            const status = document.getElementById("message-status");
+        navLinks.forEach(link => {
 
-            if (name.trim() === "" ||
-                email.trim() === "" ||
-                message.trim() === "") {
+            link.addEventListener("click", function() {
 
-                status.textContent = "Please complete all fields.";
-                return;
-            }
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
 
-            // Open the user's email application
-            const subject = encodeURIComponent("Portfolio Contact Message");
-            const body = encodeURIComponent(
-                "Name: " + name +
-                "\nEmail: " + email +
-                "\n\nMessage:\n" + message
-            );
+                this.classList.add("active");
 
-            window.location.href =
-                "mailto:yourname@example.com?subject=" +
-                subject + "&body=" + body;
-
-            status.textContent =
-                "Your email application is opening. Please send your message there.";
+            });
 
         });
 
     </script>
 
 </body>
+
 </html>
 
-    
+
+           
+
+        
