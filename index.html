@@ -1,4 +1,449 @@
-<https://htmlpreview.github.io/? add before html></https:>
-</https:></https:>
-test my first website home page
-<a href="home.html">Home</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #101c36;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #00c9a7;
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #00c9a7;
+        }
+
+        /* Home Section */
+        .home {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 10%;
+            background: linear-gradient(135deg, #101c36, #243b65);
+            color: white;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1100px;
+        }
+
+        .profile-image img {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #00c9a7;
+        }
+
+        .welcome {
+            color: #00c9a7;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .intro h1 {
+            font-size: 42px;
+            margin: 12px 0;
+        }
+
+        .intro h1 span,
+        section h2 span {
+            color: #00a98f;
+        }
+
+        .intro h3 {
+            margin-bottom: 15px;
+            color: #c5d5ef;
+        }
+
+        .intro p {
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00c9a7;
+            color: #101c36;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Common Sections */
+        section:not(.home) {
+            padding: 65px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #101c36;
+        }
+
+        /* About Me */
+        .about p,
+        .goals p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* Career Background */
+        .career {
+            background: #e8eef8;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 750px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .info-card h3 {
+            color: #008f79;
+            margin-bottom: 10px;
+        }
+
+        .info-card ul {
+            padding-left: 25px;
+        }
+
+        /* Interests */
+        .interest-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .interest-card {
+            background: white;
+            padding: 30px 20px;
+            width: 260px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .interest-card h3 {
+            color: #008f79;
+            margin-bottom: 10px;
+        }
+
+        /* Future Goals */
+        .goals {
+            background: #e8eef8;
+        }
+
+        /* Footer */
+        footer {
+            background: #101c36;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .home-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro h1 {
+                font-size: 32px;
+            }
+
+            .profile-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .interest-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">MyPortfolio.</h2>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#goals">Future Goals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <div class="profile-image">
+                <img src="https://placehold.co/300x300/1e293b/ffffff?text=Your+Photo"
+                     alt="My Profile Photo">
+            </div>
+
+            <div class="intro">
+
+                <p class="welcome">
+                    WELCOME TO MY PERSONAL PORTFOLIO
+                </p>
+
+                <h1>Hello, I'm <span>Your Name</span></h1>
+
+                <h3>Aspiring Professional | Lifelong Learner</h3>
+
+                <p>
+                    I am a motivated and enthusiastic individual
+                    with a passion for personal development,
+                    professional growth and learning new skills.
+                    I enjoy exploring new opportunities, solving
+                    problems and challenging myself to achieve
+                    meaningful goals.
+                </p>
+
+                <a href="#about" class="btn">Discover More</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about" id="about">
+
+        <h2>About <span>Me</span></h2>
+
+        <p>
+            I am a dedicated and hardworking individual who values
+            creativity, teamwork and continuous improvement.
+            I have a strong interest in developing my knowledge
+            and gaining experience in my chosen career field.
+            My aim is to use my skills, enthusiasm and determination
+            to make a positive contribution wherever I work.
+        </p>
+
+    </section>
+
+    <!-- Career Background -->
+    <section class="career" id="career">
+
+        <h2>My Career <span>Background</span></h2>
+
+        <div class="info-card">
+
+            <h3>Education & Experience</h3>
+
+            <p>
+                My educational background has helped me develop
+                important skills such as communication, teamwork,
+                organisation and problem-solving.
+                Through my academic and professional experiences,
+                I continue to build the knowledge and confidence
+                needed for my future career.
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>Key Skills</h3>
+
+            <ul>
+                <li>Communication and interpersonal skills</li>
+                <li>Teamwork and collaboration</li>
+                <li>Problem-solving and critical thinking</li>
+                <li>Time management and organisation</li>
+                <li>Adaptability and willingness to learn</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Personal Interests -->
+    <section class="interests">
+
+        <h2>My <span>Interests</span></h2>
+
+        <div class="interest-container">
+
+            <div class="interest-card">
+                <h3>Technology</h3>
+                <p>
+                    Exploring technology and learning
+                    new digital skills.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Personal Growth</h3>
+                <p>
+                    Reading, learning and developing
+                    new abilities.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Teamwork</h3>
+                <p>
+                    Working with others and sharing
+                    creative ideas.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Future Goals -->
+    <section class="goals" id="goals">
+
+        <h2>My Future <span>Goals</span></h2>
+
+        <p>
+            My future goal is to build a successful and rewarding
+            career in my chosen profession. I aim to gain valuable
+            experience, improve my technical and professional skills,
+            and take advantage of opportunities for further learning.
+            Ultimately, I want to become a confident professional
+            who makes a meaningful impact in the workplace and
+            continues to grow both personally and professionally.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Your Name | Personal Portfolio</p>
+        <p>Designed with HTML, CSS and JavaScript</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Welcome message
+        window.addEventListener("load", function() {
+            console.log("Welcome to my personal portfolio!");
+        });
+
+        // Navigation link interaction
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function() {
+
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+        // Discover More button interaction
+        const discoverButton = document.querySelector(".btn");
+
+        discoverButton.addEventListener("click", function() {
+            console.log("Welcome to the About Me section!");
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
+                
