@@ -127,6 +127,34 @@
             transform: translateY(-3px);
         }
 
+        .page-navigation {
+            background: white;
+        }
+
+        .page-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .page-links a {
+            min-width: 190px;
+            padding: 14px 22px;
+            border: 2px solid #00a98f;
+            border-radius: 6px;
+            color: #101c36;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .page-links a:hover,
+        .page-links a:focus-visible {
+            background: #00c9a7;
+            color: #101c36;
+        }
+
         /* Common Sections */
         section:not(.home) {
             padding: 65px 10%;
@@ -295,6 +323,18 @@
 
             </div>
         </div>
+    </section>
+
+    <!-- Links to the other portfolio pages -->
+    <section class="page-navigation" aria-labelledby="page-navigation-title">
+        <h2 id="page-navigation-title">Explore My <span>Pages</span></h2>
+
+        <nav class="page-links" aria-label="Portfolio pages">
+            <a href="Business%20Showcase.html">Business Showcase</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Problem%20solving.html">Problem Solving</a>
+            <a href="Skills.html">Skills</a>
+        </nav>
     </section>
 
     <!-- About Me Section -->
