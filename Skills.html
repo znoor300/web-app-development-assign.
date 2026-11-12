@@ -1,14 +1,608 @@
-<html>
-    <head>
-        <title>Skills</title>
-    </head>
-    <body>
-        <h1>My Skills</h1>
-        <ul>
-            <li>Progamming</li>
-            <li>Web Development</li>
-            <li>Data Analysis</li>
-            <li>Machine Learning</li>
-        </ul>
-    </body>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills and Experience</title>
+
+    <style>
+
+        /* GENERAL STYLING */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --background: #FAFAFC;
+            --light-purple: #F2EDF8;
+            --purple: #7652A3;
+            --neon-green: #B8FF3B;
+            --dark-grey: #37343E;
+            --medium-grey: #77727F;
+            --light-grey: #E9E8ED;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--dark-grey);
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION BAR */
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--purple);
+        }
+
+        .logo span {
+            color: #82BD20;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+            border-bottom: 2px solid var(--neon-green);
+            padding-bottom: 5px;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: auto;
+            padding: 45px 0;
+        }
+
+        /* PAGE TITLE */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-title h1 {
+            font-size: 34px;
+            color: var(--purple);
+        }
+
+        .page-title span {
+            color: #82BD20;
+        }
+
+        .page-title p {
+            color: var(--medium-grey);
+            font-size: 15px;
+        }
+
+        /* SKILLS SECTION */
+
+        .skills-section {
+            margin-bottom: 45px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            display: inline-block;
+            padding: 8px 25px;
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-bottom: 3px solid var(--neon-green);
+            border-radius: 25px;
+            color: var(--purple);
+            font-size: 23px;
+        }
+
+        /* COURSE CARDS */
+
+        .course-card {
+            background: var(--background);
+            border: 1px solid var(--light-grey);
+            border-left: 4px solid var(--purple);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 22px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            border-left-color: #82BD20;
+            box-shadow: 0 5px 18px rgba(118,82,163,0.10);
+            transform: translateY(-3px);
+        }
+
+        .course-card h3 {
+            color: var(--purple);
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .course-card p {
+            color: var(--medium-grey);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .course-year {
+            color: #82BD20;
+            font-weight: bold;
+        }
+
+        /* COURSE IMAGES */
+
+        .course-image {
+            width: 220px;
+            height: 125px;
+            margin: auto;
+            border: 2px solid var(--neon-green);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--light-purple);
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* EXPERIENCE SECTION */
+
+        .experience-section {
+            margin-top: 50px;
+        }
+
+        .experience-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .experience-heading h2 {
+            display: inline-block;
+            padding: 8px 25px;
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-bottom: 3px solid var(--neon-green);
+            border-radius: 25px;
+            color: var(--purple);
+            font-size: 23px;
+        }
+
+        /* EXPERIENCE CARDS */
+
+        .experience-card {
+            background: var(--background);
+            border: 1px solid var(--light-grey);
+            border-left: 4px solid var(--purple);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-bottom: 22px;
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            border-left-color: #82BD20;
+            box-shadow: 0 5px 18px rgba(118,82,163,0.10);
+        }
+
+        .experience-card h3 {
+            color: var(--purple);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .experience-card ul {
+            padding-left: 22px;
+            color: var(--medium-grey);
+        }
+
+        .experience-card li {
+            padding: 5px 0;
+            font-size: 15px;
+        }
+
+        .experience-card li::marker {
+            color: #82BD20;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 35px;
+            padding: 22px;
+            text-align: center;
+            background: var(--light-purple);
+            border-top: 1px solid var(--light-grey);
+            color: var(--medium-grey);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .page-title h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .course-image {
+                width: 100%;
+                max-width: 260px;
+            }
+
+            .experience-card {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                MyPortfolio<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="skills.html" class="active">Skills</a>
+                </li>
+
+                <li>
+                    <a href="business.html">Business Showcase</a>
+                </li>
+
+                <li>
+                    <a href="problem-solving.html">Problem Solving</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <h1>My Skills and <span>Experience</span></h1>
+
+            <p>
+                A collection of my learning achievements,
+                professional skills and work experience.
+            </p>
+
+        </div>
+
+
+        <!-- SKILLS SECTION -->
+
+        <section class="skills-section">
+
+            <div class="section-heading">
+
+                <h2>My Skills and Experience</h2>
+
+            </div>
+
+
+            <!-- COURSE 1 -->
+
+            <div class="course-card">
+
+                <h3>
+                    Excel: Introduction to Formulas and Functions
+                </h3>
+
+                <p>
+                    LinkedIn Learning |
+                    <span class="course-year">2021</span>
+                </p>
+
+                <div class="course-image">
+
+                    <img
+                        src="https://placehold.co/440x250/F2EDF8/7652A3?text=Course+Certificate+1"
+                        alt="Excel Formulas and Functions course">
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 2 -->
+
+            <div class="course-card">
+
+                <h3>
+                    Excel: Introduction to Charts and Graphs
+                </h3>
+
+                <p>
+                    Developing knowledge of data presentation
+                    and visualisation using Excel.
+                </p>
+
+                <div class="course-image">
+
+                    <img
+                        src="https://placehold.co/440x250/F2EDF8/7652A3?text=Course+Certificate+2"
+                        alt="Excel Charts and Graphs course">
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 3 -->
+
+            <div class="course-card">
+
+                <h3>
+                    Excel: PivotTables for Beginners
+                </h3>
+
+                <p>
+                    Learning how to organise, analyse and
+                    summarise data using PivotTables.
+                </p>
+
+                <div class="course-image">
+
+                    <img
+                        src="https://placehold.co/440x250/F2EDF8/7652A3?text=Course+Certificate+3"
+                        alt="Excel PivotTables course">
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 4 -->
+
+            <div class="course-card">
+
+                <h3>
+                    Excel: Introduction to Formatting
+                </h3>
+
+                <p>
+                    Developing skills in spreadsheet
+                    formatting and professional presentation.
+                </p>
+
+                <div class="course-image">
+
+                    <img
+                        src="https://placehold.co/440x250/F2EDF8/7652A3?text=Course+Certificate+4"
+                        alt="Excel Formatting course">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE SECTION -->
+
+        <section class="experience-section">
+
+            <div class="experience-heading">
+
+                <h2>Experience</h2>
+
+            </div>
+
+
+            <!-- BRAND PROMOTER -->
+
+            <div class="experience-card">
+
+                <h3>Brand Promoter</h3>
+
+                <ul>
+
+                    <li>
+                        Promoted products and communicated
+                        product information to customers.
+                    </li>
+
+                    <li>
+                        Developed customer service and
+                        interpersonal communication skills.
+                    </li>
+
+                    <li>
+                        Helped create positive customer
+                        experiences and brand awareness.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- STUDENT AMBASSADOR -->
+
+            <div class="experience-card">
+
+                <h3>Student Ambassador</h3>
+
+                <ul>
+
+                    <li>
+                        Represented the institution
+                        in student-related activities.
+                    </li>
+
+                    <li>
+                        Communicated with students and
+                        helped provide useful information.
+                    </li>
+
+                    <li>
+                        Developed teamwork, leadership
+                        and organisational skills.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; <span id="year"></span>
+            Your Name. All Rights Reserved.
+        </p>
+
+        <p>
+            Personal Portfolio
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Automatically update the copyright year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Navigation active link effect
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function() {
+
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+
+        // Welcome message
+
+        window.addEventListener("load", function() {
+
+            console.log("Welcome to my Skills and Experience page!");
+
+        });
+
+    </script>
+
+</body>
+
 </html>
