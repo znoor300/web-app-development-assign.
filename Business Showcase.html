@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +9,61 @@
     <title>Business Showcase | My Portfolio</title>
 
     <style>
-        /* =========================
-           GENERAL STYLES
-        ========================== */
+
+        /* GENERAL STYLING */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
+        :root {
+            --white: #FFFFFF;
+            --background: #FAFAFC;
+            --light-purple: #F2EDF8;
+            --purple: #7652A3;
+            --neon-green: #B8FF3B;
+            --dark-grey: #37343E;
+            --medium-grey: #77727F;
+            --light-grey: #E9E8ED;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            background: #f4f7fb;
-            color: #222;
+            background: var(--white);
+            color: var(--dark-grey);
+            line-height: 1.7;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================== */
+        /* NAVIGATION BAR */
 
         header {
-            background: #111827;
-            color: white;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
         .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 70px;
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 25px;
             font-weight: bold;
-            color: #60a5fa;
+            color: var(--purple);
+        }
+
+        .logo span {
+            color: #82BD20;
         }
 
         .nav-links {
@@ -69,885 +73,449 @@
         }
 
         .nav-links a {
-            color: white;
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-size: 14px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #60a5fa;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+            border-bottom: 2px solid var(--neon-green);
+            padding-bottom: 5px;
         }
 
-        /* =========================
-           HERO
-        ========================== */
+        /* MAIN CONTAINER */
 
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-            min-height: 480px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-content {
+        .container {
+            width: 90%;
             max-width: 850px;
             margin: auto;
+            padding: 55px 0;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+        /* PAGE TITLE */
 
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: white;
-            color: #1e3a8a;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* =========================
-           SECTION
-        ========================== */
-
-        section {
-            padding: 70px 0;
-        }
-
-        .section-title {
+        .page-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        .section-title h2 {
-            font-size: 2.3rem;
-            color: #111827;
-            margin-bottom: 10px;
+        .page-title h1 {
+            display: inline-block;
+            font-size: 32px;
+            color: var(--purple);
+            background: var(--light-purple);
+            padding: 8px 30px;
+            border: 1px solid #E2D8EF;
+            border-bottom: 3px solid var(--neon-green);
+            border-radius: 25px;
         }
 
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: auto;
+        .page-title span {
+            color: #82BD20;
         }
 
-        /* =========================
-           PROJECT CARDS
-        ========================== */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+        .page-title p {
+            color: var(--medium-grey);
+            font-size: 15px;
+            margin-top: 12px;
         }
+
+        /* PROJECT BOXES */
 
         .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            background: var(--background);
+            border: 1px solid var(--light-grey);
+            border-left: 4px solid var(--purple);
+            border-radius: 18px;
+            padding: 30px 35px;
+            margin-bottom: 28px;
+            transition: 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-left-color: #82BD20;
+            box-shadow: 0 6px 20px rgba(118,82,163,0.10);
+            transform: translateY(-4px);
         }
 
-        .project-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 25px;
+        /* PROJECT HEADING */
+
+        .project-card h2 {
+            color: var(--purple);
+            font-size: 22px;
+            margin-bottom: 18px;
         }
 
-        .project-header span {
-            font-size: 0.85rem;
-            background: #60a5fa;
-            padding: 5px 10px;
-            border-radius: 20px;
+        .project-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            color: var(--dark-grey);
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        .project-header h3 {
-            margin-top: 15px;
-            font-size: 1.4rem;
-        }
+        /* PROJECT DESCRIPTION */
 
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-content h4 {
-            color: #1e3a8a;
-            margin-top: 18px;
-            margin-bottom: 7px;
-        }
-
-        .project-content h4:first-child {
-            margin-top: 0;
-        }
-
-        .project-content p {
-            color: #555;
-        }
-
-        /* =========================
-           SKILLS
-        ========================== */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .skill {
-            background: #e0ecff;
-            color: #1e3a8a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        /* =========================
-           PROBLEM SOLVING RATIONALE
-        ========================== */
-
-        .rationale {
-            background: #111827;
-            color: white;
-        }
-
-        .rationale .section-title h2 {
-            color: white;
-        }
-
-        .rationale .section-title p {
-            color: #d1d5db;
-        }
-
-        .rationale-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .rationale-box {
-            background: #1f2937;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid #60a5fa;
-        }
-
-        .rationale-box h3 {
-            color: #60a5fa;
+        .project-card p {
+            color: var(--medium-grey);
+            font-size: 14px;
             margin-bottom: 12px;
         }
 
-        .rationale-box p {
-            color: #d1d5db;
+        /* PROJECT BULLET POINTS */
+
+        .project-card ul {
+            padding-left: 25px;
+            color: var(--medium-grey);
         }
 
-        /* =========================
-           PROCESS
-        ========================== */
-
-        .process {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .project-card li {
+            padding: 7px 0;
+            font-size: 15px;
         }
 
-        .process-step {
-            background: white;
-            padding: 25px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        .project-card li::marker {
+            color: #82BD20;
+            font-size: 17px;
         }
 
-        .number {
-            width: 45px;
-            height: 45px;
-            margin: 0 auto 15px;
+        /* PROJECT TAGS */
+
+        .project-tags {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #2563eb;
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.2rem;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
         }
 
-        .process-step h3 {
-            margin-bottom: 10px;
-            color: #111827;
+        .tag {
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-radius: 20px;
+            padding: 5px 13px;
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .process-step p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* =========================
-           REFLECTION
-        ========================== */
-
-        .reflection {
-            background: white;
-        }
-
-        .reflection-box {
-            max-width: 900px;
-            margin: auto;
-            padding: 35px;
-            background: #f0f6ff;
-            border-radius: 12px;
-            border-left: 5px solid #2563eb;
-        }
-
-        .reflection-box p {
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         footer {
-            background: #111827;
-            color: white;
+            margin-top: 30px;
+            padding: 22px;
             text-align: center;
-            padding: 30px 0;
+            background: var(--light-purple);
+            border-top: 1px solid var(--light-grey);
+            color: var(--medium-grey);
+            font-size: 13px;
         }
 
-        footer p {
-            color: #d1d5db;
+        footer span {
+            color: var(--purple);
+            font-weight: bold;
         }
 
-        /* =========================
-           RESPONSIVE DESIGN
-        ========================== */
+        /* RESPONSIVE DESIGN */
 
-        @media (max-width: 900px) {
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .rationale-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
 
             .navbar {
                 flex-direction: column;
-                padding: 15px 0;
+                gap: 15px;
             }
 
             .nav-links {
-                margin-top: 10px;
-                gap: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 12px;
             }
 
-            .process {
-                grid-template-columns: 1fr;
+            .container {
+                width: 92%;
+                padding: 35px 0;
             }
 
-            .hero {
-                min-height: 400px;
+            .page-title h1 {
+                font-size: 26px;
             }
 
-            .hero h1 {
-                font-size: 2rem;
+            .project-card {
+                padding: 23px;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .project-card h2 {
+                font-size: 19px;
             }
 
-            section {
-                padding: 50px 0;
-            }
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- NAVIGATION BAR -->
 
     <header>
-        <div class="container navbar">
+
+        <nav class="navbar">
 
             <div class="logo">
-                Business Showcase
+                MyPortfolio<span>.</span>
             </div>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#problem-solving">Problem-Solving</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#reflection">Reflection</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="skills.html">Skills</a>
+                </li>
+
+                <li>
+                    <a href="business.html" class="active">
+                        Business Showcase
+                    </a>
+                </li>
+
+                <li>
+                    <a href="problem-solving.html">
+                        Problem Solving
+                    </a>
+                </li>
+
             </ul>
 
-        </div>
+        </nav>
+
     </header>
 
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
+    <!-- MAIN CONTENT -->
 
-    <section class="hero" id="home">
+    <main class="container">
 
-        <div class="container hero-content">
 
-            <h1>My Business Project Showcase</h1>
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <h1>
+                Business <span>Showcase</span>
+            </h1>
 
             <p>
-                Welcome to my business showcase portfolio. This page presents
-                projects I have worked on, the challenges I encountered,
-                the solutions I developed and the skills I gained throughout
-                each project.
+                Explore my projects, ideas and practical achievements.
             </p>
 
-            <a href="#projects" class="btn">
-                Explore My Projects
-            </a>
-
         </div>
 
-    </section>
 
+        <!-- FIRST PROJECT -->
 
-    <!-- =========================
-         PROJECTS
-    ========================== -->
+        <section class="project-card">
 
-    <section id="projects">
+            <h2>
+                <span class="project-number">1</span>
+                1st Project
+            </h2>
 
-        <div class="container">
+            <p>
+                A brief introduction to my first project
+                and the work involved.
+            </p>
 
-            <div class="section-title">
+            <ul>
 
-                <h2>Project Showcase</h2>
+                <li>
+                    Describe the main purpose of the project.
+                </li>
 
-                <p>
-                    The following projects demonstrate my ability to analyse
-                    problems, work collaboratively, develop solutions and
-                    reflect on the outcomes of my work.
-                </p>
+                <li>
+                    Explain the skills and knowledge used.
+                </li>
+
+                <li>
+                    Highlight the outcome or achievement.
+                </li>
+
+            </ul>
+
+            <div class="project-tags">
+
+                <span class="tag">Project Planning</span>
+
+                <span class="tag">Research</span>
+
+                <span class="tag">Creativity</span>
 
             </div>
 
+        </section>
 
-            <div class="projects">
 
-                <!-- PROJECT 1 -->
+        <!-- SECOND PROJECT -->
 
-                <article class="project-card">
+        <section class="project-card">
 
-                    <div class="project-header">
+            <h2>
+                <span class="project-number">2</span>
+                2nd Project
+            </h2>
 
-                        <span>Project 01</span>
+            <p>
+                A brief introduction to my second project
+                and its main objectives.
+            </p>
 
-                        <h3>Problem-Solving Page</h3>
+            <ul>
 
-                    </div>
+                <li>
+                    Describe the problem or opportunity addressed.
+                </li>
 
-                    <div class="project-content">
+                <li>
+                    Explain the methods and techniques used.
+                </li>
 
-                        <h4>My Role</h4>
+                <li>
+                    Describe the final results and learning outcomes.
+                </li>
 
-                        <p>
-                            I was responsible for planning and developing the
-                            Problem-Solving Page, organising the content and
-                            creating a clear structure that allows users to
-                            understand a problem and its proposed solution.
-                        </p>
+            </ul>
 
-                        <h4>Problem Addressed</h4>
+            <div class="project-tags">
 
-                        <p>
-                            Users can find it difficult to understand complex
-                            problems when information is presented without
-                            structure. The page needed to communicate the
-                            problem, investigation, solution and outcome in a
-                            logical way.
-                        </p>
+                <span class="tag">Problem Solving</span>
 
-                        <h4>Solution</h4>
+                <span class="tag">Teamwork</span>
 
-                        <p>
-                            I structured the page into clear sections,
-                            including the problem, analysis, proposed solution,
-                            implementation and evaluation. HTML and CSS were
-                            used to create a consistent and responsive layout.
-                        </p>
-
-                        <h4>Outcome</h4>
-
-                        <p>
-                            The resulting page provides a logical user journey
-                            and makes the problem-solving process easier to
-                            follow and evaluate.
-                        </p>
-
-                        <h4>Skills Used</h4>
-
-                        <div class="skills">
-
-                            <span class="skill">HTML</span>
-                            <span class="skill">CSS</span>
-                            <span class="skill">UX Design</span>
-                            <span class="skill">Problem Solving</span>
-                            <span class="skill">Planning</span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 2 -->
-
-                <article class="project-card">
-
-                    <div class="project-header">
-
-                        <span>Project 02</span>
-
-                        <h3>Team Business Project</h3>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <h4>My Role</h4>
-
-                        <p>
-                            I worked as part of a group and was responsible
-                            for researching information, contributing ideas
-                            and helping to prepare the final presentation.
-                        </p>
-
-                        <h4>Problem Addressed</h4>
-
-                        <p>
-                            The project required us to investigate a business
-                            challenge and identify a realistic solution while
-                            working within a limited timeframe.
-                        </p>
-
-                        <h4>Solution</h4>
-
-                        <p>
-                            Our team divided responsibilities according to
-                            individual strengths. I contributed research,
-                            discussed potential solutions and helped combine
-                            the different sections into one final project.
-                        </p>
-
-                        <h4>Outcome</h4>
-
-                        <p>
-                            We produced a completed group project that
-                            demonstrated research, communication, teamwork and
-                            our understanding of business problem-solving.
-                        </p>
-
-                        <h4>Skills Used</h4>
-
-                        <div class="skills">
-
-                            <span class="skill">Teamwork</span>
-                            <span class="skill">Research</span>
-                            <span class="skill">Communication</span>
-                            <span class="skill">Presentation</span>
-                            <span class="skill">Time Management</span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 3 -->
-
-                <article class="project-card">
-
-                    <div class="project-header">
-
-                        <span>Project 03</span>
-
-                        <h3>Personal Portfolio Website</h3>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <h4>My Role</h4>
-
-                        <p>
-                            I planned and developed the website structure,
-                            selected the content and created the page layout.
-                            I was responsible for implementing the design
-                            using HTML and CSS.
-                        </p>
-
-                        <h4>Problem Addressed</h4>
-
-                        <p>
-                            A portfolio needs to present information clearly
-                            while demonstrating technical ability. A poorly
-                            organised website can make it difficult for users
-                            to find relevant information.
-                        </p>
-
-                        <h4>Solution</h4>
-
-                        <p>
-                            I created a structured website with navigation,
-                            project sections, skills and reflective content.
-                            Responsive design techniques were used so that
-                            the website can adapt to different screen sizes.
-                        </p>
-
-                        <h4>Outcome</h4>
-
-                        <p>
-                            The website provides a professional platform for
-                            presenting my work, skills and experience while
-                            demonstrating my understanding of web development.
-                        </p>
-
-                        <h4>Skills Used</h4>
-
-                        <div class="skills">
-
-                            <span class="skill">HTML</span>
-                            <span class="skill">CSS</span>
-                            <span class="skill">Web Design</span>
-                            <span class="skill">Responsive Design</span>
-                            <span class="skill">Creativity</span>
-
-                        </div>
-
-                    </div>
-
-                </article>
+                <span class="tag">Communication</span>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =========================
-         PROBLEM-SOLVING RATIONALE
-    ========================== -->
+        <!-- THIRD PROJECT -->
 
-    <section class="rationale" id="problem-solving">
+        <section class="project-card">
 
-        <div class="container">
+            <h2>
+                <span class="project-number">3</span>
+                3rd Project
+            </h2>
 
-            <div class="section-title">
+            <p>
+                A brief introduction to my third project
+                and what I aimed to achieve.
+            </p>
 
-                <h2>Problem-Solving Page Development Rationale</h2>
+            <ul>
 
-                <p>
-                    This section explains why I designed the
-                    Problem-Solving Page in the way I did.
-                </p>
+                <li>
+                    Explain the main activities completed.
+                </li>
 
-            </div>
+                <li>
+                    Highlight the skills developed during the project.
+                </li>
 
+                <li>
+                    Discuss the final outcome and experience gained.
+                </li>
 
-            <div class="rationale-grid">
+            </ul>
 
-                <div class="rationale-box">
+            <div class="project-tags">
 
-                    <h3>1. Clear Structure</h3>
+                <span class="tag">Innovation</span>
 
-                    <p>
-                        I used clearly separated sections so that users can
-                        understand each stage of the problem-solving process.
-                        The structure follows a logical progression from
-                        identifying a problem through to evaluating the result.
-                    </p>
+                <span class="tag">Organisation</span>
 
-                </div>
-
-
-                <div class="rationale-box">
-
-                    <h3>2. User Experience</h3>
-
-                    <p>
-                        The page was designed with the user in mind. Headings,
-                        paragraphs, spacing and visual sections help users
-                        quickly identify important information without being
-                        overwhelmed by large blocks of text.
-                    </p>
-
-                </div>
-
-
-                <div class="rationale-box">
-
-                    <h3>3. Visual Consistency</h3>
-
-                    <p>
-                        Consistent typography, colours, spacing and card layouts
-                        were used throughout the page. This creates a
-                        professional appearance and makes the content easier
-                        to navigate.
-                    </p>
-
-                </div>
-
-
-                <div class="rationale-box">
-
-                    <h3>4. Responsive Design</h3>
-
-                    <p>
-                        The page was designed to work on desktop, tablet and
-                        mobile devices. CSS media queries allow the layout to
-                        change depending on the user's screen size.
-                    </p>
-
-                </div>
-
-
-                <div class="rationale-box">
-
-                    <h3>5. Accessibility</h3>
-
-                    <p>
-                        Semantic HTML elements such as header, section,
-                        article and footer were used to give the webpage a
-                        meaningful structure. Clear headings also help users
-                        understand the content hierarchy.
-                    </p>
-
-                </div>
-
-
-                <div class="rationale-box">
-
-                    <h3>6. Easy to Evaluate</h3>
-
-                    <p>
-                        The project was organised around the problem, role,
-                        solution, outcome and skills. This makes it easier for
-                        an assessor to see what I contributed and what I
-                        learned from the project.
-                    </p>
-
-                </div>
+                <span class="tag">Development</span>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =========================
-         PROBLEM-SOLVING PROCESS
-    ========================== -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>My Problem-Solving Approach</h2>
-
-                <p>
-                    I used a structured approach when developing my projects.
-                </p>
-
-            </div>
+    </main>
 
 
-            <div class="process">
-
-                <div class="process-step">
-
-                    <div class="number">1</div>
-
-                    <h3>Identify</h3>
-
-                    <p>
-                        Understand the problem, requirements and needs of
-                        the intended users.
-                    </p>
-
-                </div>
-
-
-                <div class="process-step">
-
-                    <div class="number">2</div>
-
-                    <h3>Analyse</h3>
-
-                    <p>
-                        Research the problem and consider different possible
-                        approaches and solutions.
-                    </p>
-
-                </div>
-
-
-                <div class="process-step">
-
-                    <div class="number">3</div>
-
-                    <h3>Develop</h3>
-
-                    <p>
-                        Create the solution, test ideas and make improvements
-                        based on feedback.
-                    </p>
-
-                </div>
-
-
-                <div class="process-step">
-
-                    <div class="number">4</div>
-
-                    <h3>Evaluate</h3>
-
-                    <p>
-                        Review the outcome and identify what worked well and
-                        what could be improved.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         REFLECTION
-    ========================== -->
-
-    <section class="reflection" id="reflection">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>Reflection and Learning</h2>
-
-                <p>
-                    What I learned from completing these projects.
-                </p>
-
-            </div>
-
-
-            <div class="reflection-box">
-
-                <p>
-                    Completing these projects helped me develop both technical
-                    and transferable skills. I improved my understanding of
-                    HTML and CSS while also learning how important planning
-                    and organisation are when developing a website.
-                </p>
-
-                <p>
-                    Working on group projects also helped me develop
-                    communication, teamwork and time-management skills.
-                    Sharing responsibilities meant that I had to communicate
-                    effectively with other members of the team and complete
-                    my tasks within agreed deadlines.
-                </p>
-
-                <p>
-                    The Problem-Solving Page was particularly important because
-                    it allowed me to apply a structured approach to presenting
-                    a problem and its solution. I learned that good web design
-                    is not only about appearance; it is also about making
-                    information clear, accessible and easy to understand.
-                </p>
-
-                <p>
-                    In future projects, I would like to improve my use of
-                    JavaScript and interactive features while continuing to
-                    focus on usability, accessibility and responsive design.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="container">
+        <p>
+            &copy; <span id="year"></span>
+            Your Name. All Rights Reserved.
+        </p>
 
-            <p>
-                &copy; 2026 My Business Showcase | Student Portfolio
-            </p>
-
-            <p>
-                Designed and developed using HTML and CSS
-            </p>
-
-        </div>
+        <p>
+            Personal Portfolio
+        </p>
 
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Automatically update copyright year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Navigation active link effect
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function() {
+
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+
+        // Welcome message
+
+        window.addEventListener("load", function() {
+
+            console.log("Welcome to my Business Showcase page!");
+
+        });
+
+    </script>
+
 </body>
+
 </html>
