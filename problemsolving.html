@@ -43,7 +43,7 @@
             margin: auto;
         }
 
-        /* NAVIGATION HEADING */
+        /* NAVIGATION */
 
         header {
             background: var(--white);
@@ -112,7 +112,7 @@
             font-size: 17px;
         }
 
-        /* HORIZONTAL PHOTO */
+        /* HORIZONTAL BANNER PHOTO */
 
         .banner {
             width: 100%;
@@ -173,6 +173,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 25px;
             margin-bottom: 25px;
+            align-items: stretch;
         }
 
         .two-column .section {
@@ -224,7 +225,7 @@
             text-decoration: none;
         }
 
-        /* BOOKING AND FEEDBACK FORM */
+        /* BOOKING AND FEEDBACK FORMS */
 
         .booking-section {
             width: 100%;
@@ -306,7 +307,7 @@
             margin-top: 12px;
         }
 
-        /* SOCIAL MEDIA WITH LOGOS */
+        /* SOCIAL MEDIA */
 
         .social-item {
             display: flex;
@@ -484,7 +485,6 @@
             .banner {
                 height: 150px;
             }
-
         }
 
     </style>
@@ -528,7 +528,6 @@
 
     <main class="container">
 
-
         <!-- HEATHER HEADING -->
 
         <section class="heather">
@@ -551,37 +550,37 @@
         </div>
 
 
-        <!-- BUSINESS CONTEXT - FULL WIDTH -->
+        <!-- BUSINESS CONTEXT -->
 
         <section class="section">
 
             <h2>Business Context</h2>
 
             <p>
-                Heather is a fictional breakfast and lunch restaurant that wants to imrpove its online presence and make its daily
-                operations easier through digital technology. 
+                Heather is a fictional breakfast and lunch restaurant that wants to improve its online presence and make its daily
+                operations easier through digital technology.
             </p>
 
             <p>
                 Currently, Heather uses paper-based methods to manage table bookings and collect customer feedback. Customers have to call
                 the restaurant during opening hours to book a table, which can be difficult for people with busy schedules. The restaurant also
-                uses paper forms to record feedback from customers. this leads to unnecessary paper waste and makes it difficult and time consuming
-                to organise and analyse the information. Staff has to manually enter feedback into computer before they can analyse it and understand
-                what improvements are needed. 
+                uses paper forms to record feedback from customers. This leads to unnecessary paper waste and makes it difficult and time-consuming
+                to organise and analyse the information. Staff have to manually enter feedback into a computer before they can analyse it and understand
+                what improvements are needed.
             </p>
 
             <p>
-                Another problem is that Heather does not have a website or social media presence. This makes it harder for restaurant to promote
-                special offer, advertise new menu items and communicate with potential customers. Customers also cannot easily view the restaurants
-                menu online before deciding to visit. 
+                Another problem is that Heather does not have a website or social media presence. This makes it harder for the restaurant to promote
+                special offers, advertise new menu items and communicate with potential customers. Customers also cannot easily view the restaurant's
+                menu online before deciding to visit.
             </p>
 
             <p>
-                To solve these problems, as Chief Technology Officer i have created a user friendly website that works on both computers and mobile 
-                phones. The website will include a table booking resquests form, digital feedback form and social media links. It will
-                also generate an email containing the customer's booking details, which can be sent directly to the restaurant without needing a live database. 
-                Overall, the website aims to reduce papperwork,save staff time , make communication easier, attract suctomers and help the restaurant
-                make better business decisions using customer feedback. 
+                To solve these problems, as Chief Technology Officer I have created a user-friendly website that works on both computers and mobile
+                phones. The website includes a table booking request form, a separate digital feedback form and social media links. It will
+                also generate an email containing the customer's details, which can be sent directly to the restaurant without needing a live database.
+                Overall, the website aims to reduce paperwork, save staff time, make communication easier, attract customers and help the restaurant
+                make better business decisions using customer feedback.
             </p>
 
         </section>
@@ -622,8 +621,8 @@
                     <strong>Telephone</strong>
 
                     <p>
-                        <a href="tel:+441612345678">
-                           +44 7342 776426 
+                        <a href="tel:+447342776426">
+                            +44 7342 776426
                         </a>
                     </p>
 
@@ -634,8 +633,8 @@
                     <strong>Email Address</strong>
 
                     <p>
-                        <a href="mailto:restaurant@example.com">
-                            Heathermanchester72@gmail.com 
+                        <a href="mailto:Heathermanchester72@gmail.com">
+                            Heathermanchester72@gmail.com
                         </a>
                     </p>
 
@@ -647,21 +646,16 @@
 
                     <p>
                         Monday - Friday: 09:00 AM - 17:00 PM
+                        <br>
                         Saturday - Sunday: 11:00 AM - 17:00 PM
                     </p>
 
                 </div>
 
-                    </p>
-
-                </div>
-
-            
-
             </section>
 
 
-            <!-- CONTACT SECTION PHOTO -->
+            <!-- CONTACT PHOTO -->
 
             <div class="photo-space">
 
@@ -674,18 +668,16 @@
         </div>
 
 
-        <!-- BOOKING AND FEEDBACK - FULL WIDTH -->
+        <!-- ONLINE BOOKING SECTION -->
 
         <section class="section booking-section">
 
-            <h2>Online Booking & Feedback</h2>
+            <h2>Online Table Booking</h2>
 
             <p>
-                Customers can use this form to request
-                a table booking, ask a question or provide
-                feedback about their restaurant experience.
-                The information entered will automatically
-                be added to an email.
+                Customers can use this form to request a table booking.
+                Enter your contact details and preferred booking information.
+                The information will automatically be added to an email.
             </p>
 
             <form id="bookingForm">
@@ -732,10 +724,6 @@
                                 Table Booking
                             </option>
 
-                            <option value="Customer Feedback">
-                                Customer Feedback
-                            </option>
-
                             <option value="General Enquiry">
                                 General Enquiry
                             </option>
@@ -754,32 +742,29 @@
 
                     <div class="form-group">
 
-                        <label for="guests">Number of Guests</label>
+                        <label for="guests">Number of Guests *</label>
 
-                        <select id="guests">
-
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="5">5 Guests</option>
-                            <option value="6">6 Guests</option>
-                            <option value="7 or more">7+ Guests</option>
-
-                        </select>
+                        <input
+                            type="number"
+                            id="guests"
+                            min="1"
+                            max="50"
+                            step="1"
+                            placeholder="Enter number of guests"
+                            required>
 
                     </div>
 
                     <div class="form-group full">
 
-                        <label for="message">
-                            Message / Feedback *
+                        <label for="bookingMessage">
+                            Booking Requirements / Message *
                         </label>
 
                         <textarea
-                            id="message"
+                            id="bookingMessage"
                             maxlength="2000"
-                            placeholder="Enter your booking requirements, enquiry or feedback..."
+                            placeholder="Enter your booking requirements or additional information..."
                             required></textarea>
 
                     </div>
@@ -796,13 +781,95 @@
                 </div>
 
                 <button type="submit" class="submit-btn">
-                    Generate Email
+                    Generate Booking Email
                 </button>
 
                 <p class="form-note">
-                    No database is required. Your default
-                    email application will open with the
-                    information automatically filled in.
+                    No database is required. Your default email
+                    application will open with your booking information
+                    automatically filled in.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- SEPARATE CUSTOMER FEEDBACK SECTION -->
+
+        <section class="section booking-section">
+
+            <h2>Customer Feedback</h2>
+
+            <p>
+                Heather Restaurant values customer opinions.
+                Customers can use this separate feedback form to
+                share their experiences, suggestions and ideas
+                for improving the restaurant's services.
+            </p>
+
+            <form id="feedbackForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="feedbackName">Full Name *</label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            maxlength="100"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="feedbackEmail">Email Address *</label>
+
+                        <input
+                            type="email"
+                            id="feedbackEmail"
+                            maxlength="254"
+                            placeholder="Enter your email address"
+                            required>
+
+                    </div>
+
+                    <div class="form-group full">
+
+                        <label for="feedbackMessage">
+                            Your Feedback *
+                        </label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            maxlength="2000"
+                            placeholder="Tell us about your experience at Heather Restaurant..."
+                            required></textarea>
+
+                    </div>
+
+                    <div class="form-group full">
+
+                        <label>
+                            <input type="checkbox" required>
+                            I have read the privacy information.
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Feedback
+                </button>
+
+                <p class="form-note">
+                    Your feedback will be prepared in an email
+                    using your default email application.
                 </p>
 
             </form>
@@ -814,8 +881,6 @@
 
         <div class="two-column">
 
-            <!-- SOCIAL MEDIA LINKS -->
-
             <section class="section">
 
                 <h2>Social Media Links</h2>
@@ -825,7 +890,6 @@
                     to discover new dishes, special offers,
                     events and restaurant updates.
                 </p>
-
 
                 <!-- FACEBOOK -->
 
@@ -885,7 +949,7 @@
         </div>
 
 
-        <!-- PRIVACY / SECURITY / GDPR FULL WIDTH -->
+        <!-- PRIVACY, SECURITY AND GDPR -->
 
         <section class="section">
 
@@ -1013,7 +1077,7 @@
             String(today.getDate()).padStart(2, "0");
 
 
-        // AUTOMATIC EMAIL GENERATION
+        // ONLINE BOOKING EMAIL GENERATION
 
         const bookingForm =
             document.getElementById("bookingForm");
@@ -1044,7 +1108,7 @@
                 document.getElementById("guests").value;
 
             const message =
-                document.getElementById("message").value.trim();
+                document.getElementById("bookingMessage").value.trim();
 
             const subject = encodeURIComponent(
                 "Heather Restaurant - " + requestType
@@ -1052,7 +1116,7 @@
 
             const body = encodeURIComponent(
 
-                "RESTAURANT ENQUIRY\n\n" +
+                "RESTAURANT BOOKING REQUEST\n\n" +
 
                 "Customer Name: " + name + "\n" +
 
@@ -1064,12 +1128,64 @@
 
                 "Number of Guests: " + guests + "\n\n" +
 
-                "Message / Feedback:\n" + message
+                "Booking Requirements:\n" + message
 
             );
 
             const restaurantEmail =
-                "restaurant@example.com";
+                "Heathermanchester72@gmail.com";
+
+            const mailtoLink =
+                "mailto:" + restaurantEmail +
+                "?subject=" + subject +
+                "&body=" + body;
+
+            window.location.href = mailtoLink;
+
+        });
+
+
+        // CUSTOMER FEEDBACK EMAIL GENERATION
+
+        const feedbackForm =
+            document.getElementById("feedbackForm");
+
+        feedbackForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            if (!feedbackForm.checkValidity()) {
+                feedbackForm.reportValidity();
+                return;
+            }
+
+            const name =
+                document.getElementById("feedbackName").value.trim();
+
+            const email =
+                document.getElementById("feedbackEmail").value.trim();
+
+            const feedback =
+                document.getElementById("feedbackMessage").value.trim();
+
+            const subject = encodeURIComponent(
+                "Heather Restaurant - Customer Feedback"
+            );
+
+            const body = encodeURIComponent(
+
+                "CUSTOMER FEEDBACK\n\n" +
+
+                "Customer Name: " + name + "\n" +
+
+                "Customer Email: " + email + "\n\n" +
+
+                "Customer Feedback:\n" + feedback
+
+            );
+
+            const restaurantEmail =
+                "Heathermanchester72@gmail.com";
 
             const mailtoLink =
                 "mailto:" + restaurantEmail +
