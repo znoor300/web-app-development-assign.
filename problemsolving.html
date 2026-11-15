@@ -1,1 +1,1016 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Problem Solving | My Portfolio</title>
+
+    <style>
+
+        /* GENERAL STYLING */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --background: #FAFAFC;
+            --light-purple: #F2EDF8;
+            --purple: #7652A3;
+            --neon-green: #B8FF3B;
+            --dark-grey: #37343E;
+            --medium-grey: #77727F;
+            --light-grey: #E9E8ED;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--dark-grey);
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--white);
+            border-bottom: 2px solid var(--light-grey);
+            padding: 22px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--purple);
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: var(--medium-grey);
+            font-size: 17px;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            background: var(--light-purple);
+            padding: 14px;
+            text-align: center;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+            border-bottom: 2px solid var(--neon-green);
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* HORIZONTAL IMAGE */
+
+        .banner {
+            width: 100%;
+            height: 260px;
+            margin: 25px 0;
+            border: 3px solid var(--neon-green);
+            border-radius: 12px;
+            background: var(--light-purple);
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SECTION BOXES */
+
+        .section {
+            background: var(--background);
+            border: 1px solid var(--light-grey);
+            border-left: 5px solid var(--purple);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            border-left-color: #82BD20;
+            box-shadow: 0 5px 18px rgba(118,82,163,0.08);
+        }
+
+        .section h2 {
+            display: inline-block;
+            color: var(--purple);
+            font-size: 23px;
+            margin-bottom: 15px;
+            padding: 5px 15px;
+            background: var(--light-purple);
+            border-radius: 7px;
+            border-bottom: 3px solid var(--neon-green);
+        }
+
+        .section p {
+            color: var(--medium-grey);
+            font-size: 17px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* TWO COLUMN LAYOUT */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .two-column .section {
+            margin-bottom: 0;
+        }
+
+        /* BOOKING FORM */
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark-grey);
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid var(--light-grey);
+            border-radius: 6px;
+            background: var(--white);
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            color: var(--dark-grey);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--purple);
+        }
+
+        .form-group textarea {
+            height: 105px;
+            resize: vertical;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 7px;
+        }
+
+        .submit-btn {
+            background: var(--purple);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--neon-green);
+            color: var(--dark-grey);
+        }
+
+        .form-note {
+            font-size: 14px;
+            color: var(--medium-grey);
+            margin-top: 12px;
+        }
+
+        /* PHOTO SPACE */
+
+        .photo-space {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            border: 3px solid var(--neon-green);
+            border-radius: 10px;
+            background: var(--light-purple);
+            overflow: hidden;
+        }
+
+        .photo-space img {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SOCIAL MEDIA */
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: var(--purple);
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--neon-green);
+            color: var(--dark-grey);
+        }
+
+        /* CONTACT DETAILS */
+
+        .contact-item {
+            background: var(--light-purple);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #E2D8EF;
+            margin-bottom: 12px;
+        }
+
+        .contact-item strong {
+            color: var(--purple);
+            font-size: 16px;
+        }
+
+        .contact-item p {
+            margin: 2px 0 0;
+            text-align: left;
+        }
+
+        .contact-item a {
+            color: var(--medium-grey);
+            text-decoration: none;
+        }
+
+        /* PRIVACY SECTION */
+
+        .privacy-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .privacy-item {
+            background: var(--light-purple);
+            border: 1px solid #E2D8EF;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .privacy-item h3 {
+            color: var(--purple);
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .privacy-item p {
+            font-size: 15px;
+        }
+
+        /* COOKIE NOTICE */
+
+        .cookie-notice {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 700px;
+            background: var(--white);
+            border: 1px solid var(--light-grey);
+            border-left: 5px solid var(--purple);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            padding: 18px;
+            border-radius: 10px;
+            z-index: 2000;
+        }
+
+        .cookie-notice p {
+            font-size: 14px;
+            color: var(--medium-grey);
+            margin-bottom: 10px;
+        }
+
+        .cookie-notice button {
+            background: var(--purple);
+            color: var(--white);
+            border: none;
+            padding: 9px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .cookie-notice button:hover {
+            background: var(--neon-green);
+            color: var(--dark-grey);
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 35px;
+            padding: 25px;
+            text-align: center;
+            background: var(--light-purple);
+            border-top: 1px solid var(--light-grey);
+            color: var(--medium-grey);
+            font-size: 15px;
+        }
+
+        footer span {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 29px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-content {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-space,
+            .photo-space img {
+                min-height: 300px;
+            }
+
+            .banner {
+                height: 190px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .container {
+                width: 94%;
+            }
+
+            .section {
+                padding: 18px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .banner {
+                height: 150px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Restaurant Digital Transformation</h1>
+
+        <p>Problem Solving | Business Case Study</p>
+
+    </header>
+
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar">
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="skills.html">Skills</a></li>
+
+            <li><a href="business.html">Business Showcase</a></li>
+
+            <li>
+                <a href="problem-solving.html" class="active">
+                    Problem Solving
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <main class="container">
+
+
+        <!-- HORIZONTAL BANNER IMAGE -->
+
+        <div class="banner">
+
+            <!-- Replace the image URL with your restaurant banner -->
+
+            <img
+                src="https://placehold.co/1200x300/F2EDF8/7652A3?text=Restaurant+Digital+Transformation"
+                alt="Restaurant banner image">
+
+        </div>
+
+
+        <!-- BUSINESS CONTEXT - FULL WIDTH -->
+
+        <section class="section">
+
+            <h2>Business Context</h2>
+
+            <p>
+                This case study focuses on a restaurant that
+                wants to improve its digital presence and
+                modernise its customer services through
+                digital transformation. The restaurant aims
+                to provide a more convenient and accessible
+                experience for customers using a website.
+            </p>
+
+            <p>
+                The main business problem is that customers
+                may find it difficult to access restaurant
+                information, make booking enquiries and
+                communicate with the business. Traditional
+                telephone-based enquiries can also create
+                additional work for restaurant staff.
+            </p>
+
+            <p>
+                The proposed solution is to develop a
+                responsive website using HTML, CSS and
+                JavaScript. The website will provide online
+                booking requests, customer feedback,
+                restaurant contact information and social
+                media links. These features will improve
+                communication between the restaurant and
+                its customers.
+            </p>
+
+            <p>
+                The overall goal is to improve customer
+                satisfaction, strengthen the restaurant's
+                online presence and support more efficient
+                business operations. This project also
+                demonstrates how web development can be
+                applied to solve real-world business problems
+                without requiring an expensive database system.
+            </p>
+
+        </section>
+
+
+        <!-- BOOKING FORM LEFT / PHOTO RIGHT -->
+
+        <div class="two-column">
+
+            <section class="section">
+
+                <h2>Online Booking & Feedback</h2>
+
+                <p>
+                    Customers can use this form to request
+                    a table booking, send an enquiry or
+                    provide feedback.
+                </p>
+
+                <form id="bookingForm">
+
+                    <div class="form-group">
+
+                        <label for="name">Full Name *</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            maxlength="100"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address *</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            maxlength="254"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="requestType">Request Type *</label>
+
+                        <select id="requestType" required>
+
+                            <option value="">Select request</option>
+
+                            <option value="Table Booking">
+                                Table Booking
+                            </option>
+
+                            <option value="Customer Feedback">
+                                Customer Feedback
+                            </option>
+
+                            <option value="General Enquiry">
+                                General Enquiry
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="date">Preferred Date</label>
+
+                        <input type="date" id="date">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="guests">Number of Guests</label>
+
+                        <select id="guests">
+
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7 or more">7+ Guests</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message / Feedback *
+                        </label>
+
+                        <textarea
+                            id="message"
+                            maxlength="2000"
+                            placeholder="Write your message here..."
+                            required></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            <input type="checkbox" required>
+                            I have read the privacy information.
+                        </label>
+
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Generate Email
+                    </button>
+
+                    <p class="form-note">
+                        Your email application will open with
+                        your information automatically filled in.
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- PHOTO SPACE -->
+
+            <div class="photo-space">
+
+                <!-- Replace with a restaurant or food photograph -->
+
+                <img
+                    src="https://placehold.co/600x800/F2EDF8/7652A3?text=Restaurant+Photo"
+                    alt="Restaurant interior or food photograph">
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA LEFT / CONTACT RIGHT -->
+
+        <div class="two-column">
+
+            <!-- SOCIAL MEDIA -->
+
+            <section class="section">
+
+                <h2>Social Media Links</h2>
+
+                <p>
+                    Customers can follow the restaurant
+                    on social media to view special offers,
+                    new menus, events and restaurant updates.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="https://www.facebook.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Facebook
+                    </a>
+
+                    <a href="https://www.instagram.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Instagram
+                    </a>
+
+                    <a href="https://x.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Twitter / X
+                    </a>
+
+                </div>
+
+                <p class="form-note">
+                    Replace the example links with the
+                    restaurant's official social media accounts.
+                </p>
+
+            </section>
+
+
+            <!-- CONTACT DETAILS -->
+
+            <section class="section">
+
+                <h2>Contact Details</h2>
+
+                <div class="contact-item">
+
+                    <strong>Restaurant Name</strong>
+
+                    <p>Delicious Bites Restaurant</p>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Address</strong>
+
+                    <p>Manchester, United Kingdom</p>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Telephone</strong>
+
+                    <p>
+                        <a href="tel:+441612345678">
+                            0161 234 5678
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Email Address</strong>
+
+                    <p>
+                        <a href="mailto:restaurant@example.com">
+                            restaurant@example.com
+                        </a>
+                    </p>
+
+                </div>
+
+                <p class="form-note">
+                    Replace these demonstration details
+                    with the restaurant's actual information.
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <!-- PRIVACY / SECURITY / GDPR - FULL WIDTH -->
+
+        <section class="section">
+
+            <h2>Privacy, Security & GDPR</h2>
+
+            <p>
+                Customer privacy and data protection are
+                important considerations when developing
+                a restaurant website. The proposed solution
+                considers UK GDPR and the Data Protection
+                Act 2018.
+            </p>
+
+            <div class="privacy-content">
+
+                <div class="privacy-item">
+
+                    <h3>Privacy</h3>
+
+                    <p>
+                        Only necessary customer information,
+                        such as name, email and booking
+                        requirements, should be collected.
+                        Customers should be provided with
+                        a clear privacy notice explaining
+                        how their information is used.
+                    </p>
+
+                </div>
+
+                <div class="privacy-item">
+
+                    <h3>Security</h3>
+
+                    <p>
+                        The website should use HTTPS,
+                        input validation and secure hosting.
+                        Customer information should be
+                        protected from unauthorised access
+                        and should not be stored unnecessarily.
+                    </p>
+
+                </div>
+
+                <div class="privacy-item">
+
+                    <h3>GDPR & Data Protection</h3>
+
+                    <p>
+                        Customers should be informed about
+                        their data protection rights, including
+                        access, correction and deletion.
+                        Information should only be processed
+                        for an appropriate lawful purpose.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p class="form-note">
+                Cookie reminder: This demonstration website
+                does not use non-essential tracking cookies.
+                If analytics or advertising cookies are added,
+                appropriate consent must be obtained before
+                they are activated.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- COOKIE NOTICE -->
+
+    <div class="cookie-notice" id="cookieNotice">
+
+        <p>
+            <strong>Cookie & Privacy Reminder</strong><br>
+            We respect your privacy. This demonstration
+            website does not use non-essential tracking
+            cookies. Please review the privacy information
+            before submitting your details.
+        </p>
+
+        <button type="button" id="acceptCookie">
+            Acknowledge
+        </button>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026
+            <span>Delicious Bites Restaurant</span>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Restaurant Digital Transformation |
+            Designed with HTML, CSS and JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // SET MINIMUM BOOKING DATE
+
+        const dateInput = document.getElementById("date");
+
+        const today = new Date();
+
+        dateInput.min =
+            today.getFullYear() + "-" +
+            String(today.getMonth() + 1).padStart(2, "0") + "-" +
+            String(today.getDate()).padStart(2, "0");
+
+
+        // AUTOMATIC EMAIL GENERATION
+
+        const bookingForm =
+            document.getElementById("bookingForm");
+
+        bookingForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            if (!bookingForm.checkValidity()) {
+                bookingForm.reportValidity();
+                return;
+            }
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const requestType =
+                document.getElementById("requestType").value;
+
+            const date =
+                document.getElementById("date").value ||
+                "Not specified";
+
+            const guests =
+                document.getElementById("guests").value;
+
+            const message =
+                document.getElementById("message").value.trim();
+
+            const subject = encodeURIComponent(
+                "Restaurant Enquiry - " + requestType
+            );
+
+            const body = encodeURIComponent(
+
+                "RESTAURANT ENQUIRY\n\n" +
+
+                "Customer Name: " + name + "\n" +
+
+                "Customer Email: " + email + "\n" +
+
+                "Request Type: " + requestType + "\n" +
+
+                "Booking Date: " + date + "\n" +
+
+                "Number of Guests: " + guests + "\n\n" +
+
+                "Message / Feedback:\n" + message
+
+            );
+
+            const restaurantEmail =
+                "restaurant@example.com";
+
+            const mailtoLink =
+                "mailto:" + restaurantEmail +
+                "?subject=" + subject +
+                "&body=" + body;
+
+            window.location.href = mailtoLink;
+
+        });
+
+
+        // COOKIE NOTICE BUTTON
+
+        const cookieNotice =
+            document.getElementById("cookieNotice");
+
+        const acceptCookie =
+            document.getElementById("acceptCookie");
+
+        acceptCookie.addEventListener("click", function() {
+
+            cookieNotice.style.display = "none";
+
+        });
+
+
+        // WELCOME MESSAGE
+
+        window.addEventListener("load", function() {
+
+            console.log(
+                "Welcome to the Restaurant Problem-Solving Page!"
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
